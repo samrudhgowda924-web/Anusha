@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anusha Wedding Challenge</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+margin:0;
+padding:20px;
+display:flex;
+justify-content:center;
+}
+
+.container{
+background:white;
+width:100%;
+max-width:500px;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+h1{
+font-size:26px;
+}
+
+p{
+font-size:18px;
+}
+
+img{
+width:100%;
+max-width:250px;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+background:#ff6b81;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff4757;
+}
+
+.hidden{
+display:none;
+}
+
+#runBtn{
+width:auto;
+padding:12px 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="start">
+
+<h1>Anusha's Wedding Challenge 👰</h1>
+
+<img src="anusha.jpg.jpeg">
+
+<p>
+Before getting married you must complete
+<b>3 challenges</b>
+created by your brother Samrudh 😎
+</p>
+
+<button onclick="startGame()">Start Challenge</button>
+
+</div>
+
+<div id="quiz" class="hidden">
+
+<h2>Game 1 – Sister Quiz</h2>
+
+<p>Who is the best brother?</p>
+
+<button onclick="next1()">Samrudh</button>
+<button onclick="next1()">Samrudh obviously</button>
+<button onclick="next1()">Legend Samrudh</button>
+
+</div>
+
+<div id="quiz2" class="hidden">
+
+<p>What was our best memory?</p>
+
+<button onclick="next2()">Childhood fights</button>
+<button onclick="next2()">Stealing snacks together</button>
+<button onclick="next2()">Laughing at random things</button>
+<button onclick="next2()">All the moments together ❤️</button>
+
+</div>
+
+<div id="catchGame" class="hidden">
+
+<h2>Game 2 – Catch Your Brother</h2>
+
+<p>Tap the button before it escapes!</p>
+
+<button id="runBtn" onmouseover="moveButton()">Catch Me</button>
+
+<br><br>
+
+<button onclick="next3()">I caught him!</button>
+
+</div>
+
+<div id="luckGame" class="hidden">
+
+<h2>Game 3 – Lucky Sister Button</h2>
+
+<p>Pick the correct button</p>
+
+<button onclick="wrong()">Option 1</button>
+<button onclick="wrong()">Option 2</button>
+<button onclick="finish()">Option 3</button>
+<button onclick="wrong()">Option 4</button>
+
+</div>
+
+<div id="final" class="hidden">
+
+<h1>🎉 Congratulations Anusha</h1>
+
+<p>
+You passed all the brother challenges!
+</p>
+
+<p>
+No matter where life takes you,
+you will always be my sister and
+one of the most important people in my life ❤️
+</p>
+
+<h3>Love you always<br>— Samrudh</h3>
+
+</div>
+
+</div>
+
+<script>
+
+function startGame(){
+document.getElementById("start").classList.add("hidden");
+document.getElementById("quiz").classList.remove("hidden");
+}
+
+function next1(){
+document.getElementById("quiz").classList.add("hidden");
+document.getElementById("quiz2").classList.remove("hidden");
+}
+
+function next2(){
+document.getElementById("quiz2").classList.add("hidden");
+document.getElementById("catchGame").classList.remove("hidden");
+}
+
+function next3(){
+document.getElementById("catchGame").classList.add("hidden");
+document.getElementById("luckGame").classList.remove("hidden");
+}
+
+function finish(){
+document.getElementById("luckGame").classList.add("hidden");
+document.getElementById("final").classList.remove("hidden");
+}
+
+function wrong(){
+alert("Wrong choice! Try again 😆");
+}
+
+function moveButton(){
+let btn = document.getElementById("runBtn");
+btn.style.position="relative";
+btn.style.left=Math.random()*200+"px";
+btn.style.top=Math.random()*100+"px";
+}
+
+</script>
+
+</body>
+</html>
